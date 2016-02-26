@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <!-- google's material design lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.deep_purple-amber.min.css">
+    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    
+    <!-- md-chips -->
+    <link rel="stylesheet" href="https://rawgit.com/matheuscscp/md-chips/master/md-chips.css">
+    <script type="text/javascript" src="https://rawgit.com/matheuscscp/md-chips/master/md-chips.js"></script>
+  </head>
+  <body>
+    <div style="margin: 20px;"> <!-- dummy div to give some space -->
+      <div class="md-chips" data-label="Tags" data-name="tags" data-deny-arbitrary-input>
+        <div class="md-chip" data-title="tag1"></div>
+        <div class="md-chip" data-title="tag2">tag2 description</div>
+        <div class="md-chips__option" data-title="opt1"></div>
+        <div class="md-chips__option" data-title="opt2">opt2 description</div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function() {
+        init_md_chips();
+      });
+    </script>
+  </body>
+</html>
