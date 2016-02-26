@@ -197,7 +197,7 @@ function upgrade_md_chips(jq) {
       "<input class=\"mdl-textfield__input\" autocomplete=\"off\">"+
       "<div class=\"md-chips__options mdl-shadow--8dp\"></div>"+
     "</div>"+
-    "<label class=\"mdl-textfield__label hide\">"+
+    "<label class=\"mdl-textfield__label\">"+
       jq.attr("data-label")+
     "</label>"
   );
@@ -209,6 +209,7 @@ function upgrade_md_chips(jq) {
   var input = jq.find(".mdl-textfield__input");
   var options = jq.find(".md-chips__options").css("display", "none");
   var label = jq.find(".mdl-textfield__label");
+  if (jq.find(".md-chip").length > 0) label.addClass("hide");
   
   // hook events
   var updateui = function() {
