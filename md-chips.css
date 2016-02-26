@@ -70,6 +70,7 @@
   top: 100%;
   left: 0;
   display: none;
+  background: white;
 }
 .md-chips .md-chips__option {
   font-size: 13px;
