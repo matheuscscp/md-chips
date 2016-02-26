@@ -76,6 +76,8 @@ function upgrade_md_chip_deletable(jq) {
   .keydown(function(e) {
     switch (e.which) {
       case md_chips_keyCode.BACKSPACE:
+        e.preventDefault();
+        e.stopPropagation();
         var foc = jq.prev();
         if (foc.length == 0) foc = jq.next();
         jq.remove();
