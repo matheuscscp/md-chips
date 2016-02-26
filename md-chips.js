@@ -82,7 +82,7 @@ function upgrade_md_chip_deletable(jq) {
         if (foc.length == 0) foc = jq.next();
         jq.remove();
         foc.focus();
-        break;
+        return false;
       case md_chips_keyCode.LEFT:
         jq.prev().focus();
         break;
@@ -100,6 +100,7 @@ function upgrade_md_chip_deletable(jq) {
     var input = jq.siblings("input");
     jq.remove();
     input.focus();
+    return false;
   });
   
   return true;
@@ -138,6 +139,7 @@ function upgrade_md_chips_option(jq) {
     e.stopPropagation();
     jq.removeClass("mdl-color--primary");
     insert_md_chips(jq.parents(".md-chips"), {title: title, desc: desc});
+    return false;
   });
 }
 function update_md_chips_options(jq_md_chips) {
@@ -282,13 +284,13 @@ function upgrade_md_chips(jq) {
           e.preventDefault();
           e.stopPropagation();
           chip.focus();
-          return;
+          return false;
         }
         opt = jq.find(".md-chips__option[data-title='"+val+"']");
         if (deny_arbitrary_input && opt.length == 0) {
           e.preventDefault();
           e.stopPropagation();
-          return;
+          return false;
         }
         if (opt.length > 0) desc = opt.find(".md-chips__option-desc").html();
         insert_md_chips(jq, {title: val, desc: desc});
