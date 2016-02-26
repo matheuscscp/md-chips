@@ -33,3 +33,4 @@ Include MDL and jQuery, as in the example above.
 # API
 * Call `init_md_chips()` after your document is ready.
 * Call `render_md_chips_options(jquery, json_array)` to update your options. `jquery` should be a jQuery object with class `md-chips` and `array` should be a JSON array with fields `title` and `desc`.
+* Use `".md-chips .mdl-textfield__input"` selector to hook input events and update your options dynamically.
