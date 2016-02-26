@@ -1,14 +1,14 @@
 # md-chips
 Material Design Chips (subset) implementation, with MDL and jQuery.
 
-# live example
-* Link: <a target="_blank" href="http://rawgit.com/matheuscscp/md-chips/master/chips.html">http://rawgit.com/matheuscscp/md-chips/master/chips.html</a>
-* Source: <a target="_blank" href="https://github.com/matheuscscp/md-chips/blob/master/chips.html">https://github.com/matheuscscp/md-chips/blob/master/chips.html</a>
+# Example
+* Link: http://rawgit.com/matheuscscp/md-chips/master/chips.html
+* Source: https://github.com/matheuscscp/md-chips/blob/master/chips.html
 
-# installation
+# Installation
 Include MDL and jQuery, as in the example above.
 
-# markup
+# Markup
 ```html
 <div class="md-chip" data-title="chip1"></div>
 <div class="md-chip" data-title="chip2">chip2 description</div>
