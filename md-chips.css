@@ -2,6 +2,7 @@
 /* Material Design Chips implementation, by pimenta                           */
 /*============================================================================*/
 .md-chip {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   display: inline-block;
   background:#E7E7E7;
   border-radius: 100px;
@@ -45,6 +46,9 @@
 }
 .md-chip.md-chip--deletable.mdl-color--primary .md-chip__icon {
   color: white; /* works with material.deep_purple-amber.css */
+}
+.md-chips {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 .md-chips .md-chips__input-div {
   border-bottom: 1px solid rgba(0,0,0,.12);
