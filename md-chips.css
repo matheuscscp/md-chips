@@ -1,0 +1,93 @@
+/*============================================================================*/
+/* Material Design Chips implementation, by pimenta                           */
+/*============================================================================*/
+.md-chip {
+  display: inline-block;
+  background:#E7E7E7;
+  border-radius: 100px;
+  color: rgb(66,66,66);
+  margin: 3px;
+  height: 32px;
+  cursor: default;
+}
+.md-chip:focus {
+  outline: none;
+}
+.md-chip.mdl-color--primary {
+  color: white; /* works with material.deep_purple-amber.css */
+}
+.md-chip .mdl-tooltip {
+  word-wrap: break-word;
+}
+.md-chip .mdl-tooltip h1 {
+  font-size: 13px;
+  margin: 0;
+}
+.md-chip .md-chip__title {
+  font-size: 13px;
+  padding: 0 12px;
+  line-height: 32px;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.md-chip.md-chip--deletable .md-chip__title {
+  padding-right: 0;
+}
+.md-chip.md-chip--deletable .md-chip__icon {
+  overflow: hidden;
+  margin: 4px;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+}
+.md-chip.md-chip--deletable.mdl-color--primary .md-chip__icon {
+  color: white; /* works with material.deep_purple-amber.css */
+}
+.md-chips .md-chips__input-div {
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  cursor: text;
+  position: relative;
+}
+.md-chips .mdl-textfield__input {
+  border: 0;
+  width: inherit;
+  display: inline;
+  line-height: 32px;
+  padding: 0;
+  vertical-align: top;
+  margin: 3px 0;
+}
+.md-chips .md-chips__options {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+}
+.md-chips .md-chips__option {
+  font-size: 13px;
+  padding: 10px;
+  cursor: pointer;
+  word-wrap: break-word;
+}
+.md-chips .md-chips__option .md-chips__option-desc {
+  display: none;
+}
+.md-chips .md-chips__option.mdl-color--primary {
+  color: white; /* works with material.deep_purple-amber.css */
+}
+.md-chips .md-chips__option.mdl-color--primary .md-chips__option-title {
+  font-size: 16px;
+}
+.md-chips .md-chips__option.mdl-color--primary .md-chips__option-desc {
+  display: block;
+}
+.md-chips .mdl-textfield__label {
+  line-height: 29px;
+}
+.md-chips .mdl-textfield__label.hide {
+  visibility: hidden;
+}
