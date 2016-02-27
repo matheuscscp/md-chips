@@ -72,6 +72,7 @@
   display: none;
   background: white;
   z-index: 80;
+  margin-top: 1px;
 }
 .md-chips .md-chips__option {
   font-size: 13px;
