@@ -135,6 +135,11 @@ function upgrade_md_chips_option(jq) {
     return false;
   });
 }
+function md_chips_occurs(haystack, needle) {
+  var needles = needle.trim().split(/\s+/);
+  for (var i in needles) if (haystack.indexOf(needles[i]) > -1) return true;
+  return false;
+}
 function update_md_chips_options(jq_md_chips) {
   var input = jq_md_chips.find(".mdl-textfield__input");
   var options = jq_md_chips.find(".md-chips__options");
@@ -155,7 +160,10 @@ function update_md_chips_options(jq_md_chips) {
   .each(function() {
     var opt = $(this);
     var str = opt.attr("data-title");
-    if (jq_md_chips.find(".md-chip[data-title='"+str+"']").length == 0) {
+    if (
+      md_chips_occurs(str, val) &&
+      jq_md_chips.find(".md-chip[data-title='"+str+"']").length == 0
+    ) {
       opt.css("display", "block");
       cnt++;
     }
@@ -325,4 +333,11 @@ function list_md_chips(jq) {
 }
 function md_chips_input_value(jq) {
   return jq.find(".mdl-textfield__input").val();
+}
+function list_md_chips_options(jq) {
+  var ret = [];
+  jq.find(".md-chips__option").each(function() {
+    ret.push($(this).attr("data-title"));
+  });
+  return ret;
 }
