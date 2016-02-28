@@ -143,7 +143,17 @@ function upgrade_md_chips_option(jq) {
   });
 }
 function update_md_chips_options(jq_md_chips) {
-  var val = jq_md_chips.find(".mdl-textfield__input").val();
+  var input = jq_md_chips.find(".mdl-textfield__input");
+  var options = jq_md_chips.find(".md-chips__options");
+  if (!input.is(":focus")) {
+    options.css("display", "none");
+    return;
+  }
+  if (jq_md_chips.find(".mdl-progress").length == 1) {
+    options.css("display", "initial");
+    return;
+  }
+  var val = input.val();
   var cnt = 0;
   jq_md_chips
   .find(".md-chips__option")
@@ -160,8 +170,7 @@ function update_md_chips_options(jq_md_chips) {
       cnt++;
     }
   });
-  jq_md_chips.find(".md-chips__options")
-  .css("display", cnt ? "initial" : "none");
+  options.css("display", cnt ? "initial" : "none");
 }
 function render_md_chips_options(jq_md_chips, opts) {
   var html = "";
@@ -173,6 +182,14 @@ function render_md_chips_options(jq_md_chips, opts) {
   .children().each(function() {
     upgrade_md_chips_option($(this));
   });
+  update_md_chips_options(jq_md_chips);
+}
+function render_md_chips_loading_options(jq_md_chips) {
+  jq_md_chips.find(".md-chips__options").html(
+    "<div class=\"mdl-progress mdl-js-progress mdl-progress__indeterminate\">"+
+    "</div>"
+  );
+  componentHandler.upgradeElement(jq_md_chips.find(".mdl-progress").get(0));
   update_md_chips_options(jq_md_chips);
 }
 function upgrade_md_chips(jq) {
