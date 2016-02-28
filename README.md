@@ -30,7 +30,7 @@ Include MDL and jQuery, as in the example above.
 
 # API
 * Call `init_md_chips()` after your document is ready.
-* Call `render_md_chips_options(jquery, json_array)` to update your options. `jquery` should be a jQuery object with class `md-chips` and `array` should be a JSON array with fields `title` and `desc`.
+* Call `render_md_chips_options(jquery, json_array)` to update your options. `jquery` should be a jQuery object with class `md-chips` and `array` should be an array of objects with the fields `title` and `desc`.
 * Call `render_md_chips_loading_options(jquery)` to show the "loading options" placeholder.
 * Call `hook_md_chips_input(jquery)` to hook input events and update your options dynamically.
 * `list_md_chips(jquery)` returns an array of strings containing the current chips.
