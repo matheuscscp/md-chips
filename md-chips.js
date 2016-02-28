@@ -24,13 +24,6 @@ function new_md_chip_id() {
   var id = "md-chip--"+(md_chips_nextid++);
   return id;
 }
-function md_chips_occurs(sub, str) {
-  var tmp = sub.split(" ");
-  for (i in tmp) if (tmp[i].indexOf(" ") == -1) {
-    if (str.indexOf(tmp[i]) > -1) return true;
-  }
-  return false;
-}
 function upgrade_md_chip(jq) {
   if (jq.hasClass("md-chip--is-upgraded")) return false;
   
@@ -163,7 +156,7 @@ function update_md_chips_options(jq_md_chips) {
     var opt = $(this);
     var str = opt.attr("data-title");
     if (
-      md_chips_occurs(val, str) &&
+      str.indexOf(val) > -1 &&
       jq_md_chips.find(".md-chip[data-title='"+str+"']").length == 0
     ) {
       opt.css("display", "block");
@@ -174,7 +167,7 @@ function update_md_chips_options(jq_md_chips) {
 }
 function render_md_chips_options(jq_md_chips, opts) {
   var html = "";
-  for (i in opts) html += (
+  for (var i in opts) html += (
     "<div data-title=\""+opts[i].title+"\">"+opts[i].desc+"</div>"
   );
   jq_md_chips.find(".md-chips__options")
@@ -220,7 +213,7 @@ function upgrade_md_chips(jq) {
       jq.attr("data-label")+
     "</label>"
   );
-  for (i in chips) insert_md_chips(jq, chips[i]);
+  for (var i in chips) insert_md_chips(jq, chips[i]);
   render_md_chips_options(jq, opts);
   componentHandler.upgradeElements(jq.get(0));
   
@@ -322,4 +315,17 @@ function init_md_chips() {
   $(".md-chip").each(function() {
     upgrade_md_chip($(this));
   });
+}
+function hook_md_chips_input(jq, cb) {
+  jq.find(".mdl-textfield__input").on("input", cb);
+}
+function list_md_chips(jq) {
+  var ret = [];
+  jq.find(".md-chip").each(function() {
+    ret.push($(this).attr("data-title"));
+  });
+  return ret;
+}
+function md_chips_input_value(jq) {
+  return jq.find(".mdl-textfield__input").val();
 }
