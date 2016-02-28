@@ -12,13 +12,11 @@ Include MDL and jQuery, as in the example above.
 ```html
 <div class="md-chip" data-title="chip1"></div>
 <div class="md-chip" data-title="chip2">chip2 description</div>
-<div style="margin: 20px; border: solid black 1px; padding: 20px;"> <!-- dummy div -->
-  <div class="md-chips" data-label="Tags" data-name="tags" data-deny-arbitrary-input>
-    <div class="md-chip" data-title="tag1"></div>
-    <div class="md-chip" data-title="tag2">tag2 description</div>
-    <div class="md-chips__option" data-title="opt1"></div>
-    <div class="md-chips__option" data-title="opt2">opt2 description</div>
-  </div>
+<div class="md-chips" data-label="Tags" data-name="tags" data-deny-arbitrary-input>
+  <div class="md-chip" data-title="tag1"></div>
+  <div class="md-chip" data-title="tag2">tag2 description</div>
+  <div class="md-chips__option" data-title="opt1"></div>
+  <div class="md-chips__option" data-title="opt2">opt2 description</div>
 </div>
 ```
 * `md-chip` class: create a chip. Outside an `md-chips` element, creates a simple undeletable chip.
