@@ -155,10 +155,7 @@ function update_md_chips_options(jq_md_chips) {
   .each(function() {
     var opt = $(this);
     var str = opt.attr("data-title");
-    if (
-      str.indexOf(val) > -1 &&
-      jq_md_chips.find(".md-chip[data-title='"+str+"']").length == 0
-    ) {
+    if (jq_md_chips.find(".md-chip[data-title='"+str+"']").length == 0) {
       opt.css("display", "block");
       cnt++;
     }
