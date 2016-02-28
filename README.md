@@ -35,3 +35,4 @@ Include MDL and jQuery, as in the example above.
 * Call `hook_md_chips_input(jquery)` to hook input events and update your options dynamically.
 * `list_md_chips(jquery)` returns an array of strings containing the current chips.
 * `md_chips_input_value(jquery)` returns the current input value.
+* `list_md_chips_options(jquery)` returns an array of strings containing the current options.
