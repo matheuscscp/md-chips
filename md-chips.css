@@ -5,7 +5,7 @@
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   display: inline-block;
   background:#E7E7E7;
-  border-radius: 100px;9
+  border-radius: 100px;
   color: rgb(66,66,66);
   margin: 3px;
   height: 32px;
@@ -73,6 +73,9 @@
   background: white;
   z-index: 80;
   margin-top: 1px;
+}
+.md-chips .mdl-progress {
+  margin: 20px auto;
 }
 .md-chips .md-chips__option {
   font-size: 13px;
