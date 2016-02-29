@@ -1,14 +1,14 @@
 # md-chips
 Material Design Chips (subset) implementation, with MDL and jQuery.
 
-# Example
+## Demo
 * Link: http://rawgit.com/matheuscscp/md-chips/master/chips.html
 * Source: https://github.com/matheuscscp/md-chips/blob/master/chips.html
 
-# Installation
+## Installation
 Include MDL and jQuery, as in the example above.
 
-# Markup
+## Markup
 ```html
 <div class="md-chip" data-title="chip1"></div>
 <div class="md-chip" data-title="chip2">chip2 description</div>
@@ -28,7 +28,7 @@ Include MDL and jQuery, as in the example above.
 * `data-deny-arbitrary-input` flag attribute: include to allow input only from `md-chips` options.
 * `md-chips__option` class: create an option for `md-chips`.
 
-# API
+## API
 * Call `init_md_chips()` after your document is ready.
 * Call `render_md_chips_options(jquery, json_array)` to update your options. `jquery` should be a jQuery object with class `md-chips` and `array` should be an array of objects with the fields `title` and `desc`.
 * Call `render_md_chips_loading_options(jquery)` to show the "loading options" placeholder.
