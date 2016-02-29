@@ -184,7 +184,9 @@ function render_md_chips_options(jq_md_chips, opts) {
 }
 function render_md_chips_loading_options(jq_md_chips) {
   jq_md_chips.find(".md-chips__options").html(
+    "<div class=\"md-chips__progress\">"+
     "<div class=\"mdl-progress mdl-js-progress mdl-progress__indeterminate\">"+
+    "</div>"+
     "</div>"
   );
   componentHandler.upgradeElement(jq_md_chips.find(".mdl-progress").get(0));
